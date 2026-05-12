@@ -2,6 +2,8 @@
 
 Official implementation of **iPay** for ITSC 2026.
 
+[Paper](https://arxiv.org/abs/2605.10732)
+
 ![iPay overview](fig/figures.png)
 
 This repository provides the training and evaluation code for iPay, a skeleton- and RGB-based action recognition framework built on a DeGCN-style graph convolutional backbone with cross-modal fusion.
