@@ -1,4 +1,4 @@
-# iPay
+# iPay: Integrated Payment Action Recognition via Multimodal Networks and Adaptive Spatial Prior Learning
 
 Official implementation of **iPay** for ITSC 2026.
 
