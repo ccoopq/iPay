@@ -1,0 +1,60 @@
+work_dir: ./work_dir
+
+# feeder
+feeder: feeders.feeder_mhr70.Feeder
+train_feeder_args:
+  data_path: data/iPay/MHR70_custom.npz
+  split: train
+  debug: False
+  random_choose: False
+  random_shift: True
+  random_move: False
+  window_size: 64
+  normalization: False
+  random_rot: True
+  p_interval: [0.5, 1]
+  vel: False
+  bone: False
+  upper: False
+
+test_feeder_args:
+  data_path: data/iPay/MHR70_custom.npz
+  split: test
+  window_size: 64
+  p_interval: [0.95]
+  vel: False
+  bone: False
+  debug: False
+  upper: False
+
+# model
+model: model.paygcn.Model
+model_args:
+  num_class: 5
+  num_point: 70
+  num_person: 1
+  k: 8
+  eta: 4
+  num_stream: 2
+  use_rgb: True
+  use_fusion: True
+  use_sdd: True
+  graph: graph.mhr70.Graph
+  graph_args:
+    labeling_mode: 'spatial'
+    upper: False
+
+#optim
+weight_decay: 0.0004
+base_lr: 0.06
+step: [35,60,75]
+warm_up_epoch: 5
+cosine_epoch: 60
+
+# training
+device: [0]
+batch_size: 16
+test_batch_size: 16
+num_epoch: 80
+nesterov: True
+
